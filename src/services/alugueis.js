@@ -17,6 +17,6 @@ export default {
 
     deletar:(aluguel) => {
         return http.delete('aluguel', {data: aluguel})
-    }
+    },
 
 }

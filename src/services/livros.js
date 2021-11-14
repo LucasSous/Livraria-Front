@@ -17,6 +17,14 @@ export default {
 
     deletar:(livro) => {
         return http.delete('livro', {data: livro})
+    },
+
+    disponiveis:() => {
+        return http.get('disponiveis')
+    },
+
+    maisAlugados:() => {
+        return http.get('maisalugados')
     }
 
 }

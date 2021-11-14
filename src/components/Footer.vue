@@ -1,8 +1,6 @@
 <template>
     <footer class="rodape ">
-        <p>
-            Livraria WDA © - Desenvolvido por Lucas Sousa.
-        </p>
+        <p><b>Livraria WDA ©</b> - Desenvolvido por Lucas Sousa.</p>
     </footer>
 </template>
 
@@ -14,16 +12,15 @@ export default {
 
 <style>
 .rodape {
-    background-color: #212529;
-    border-top: rgb(124, 124, 124) solid 1px;
+    background-color: rgb(240, 240, 240);
+    border-top: rgb(90, 90, 90) solid 1px;
     padding: 0;
 }
 .rodape p {
     position: relative;
     top: 8px;
     text-align: center;
-    margin: auto;
     padding: 10px;
-    color: #c9c9c9;
+    color: rgb(90, 90, 90);
 }
 </style>

@@ -20,89 +20,43 @@
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <router-link class="nav-link active" to="/" aria-current="page" href="#">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-house-fill icone-menu"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-                                            />
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
-                                            /></svg
+                                        <v-icon
+                                            style="color:white; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                            >mdi-home</v-icon
                                         >Início</router-link
                                     >
                                 </li>
                                 <li class="nav-item">
                                     <router-link class="nav-link" to="/usuarios" href="#"
-                                        ><svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-person-fill icone-menu"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                                            /></svg
+                                        ><v-icon
+                                            style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                            >mdi-account-multiple</v-icon
                                         >Usuários</router-link
                                     >
                                 </li>
 
                                 <li class="nav-item">
                                     <router-link class="nav-link " to="/editoras"
-                                        ><svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-bookmark-fill icone-menu"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"
-                                            /></svg
+                                        ><v-icon
+                                            style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                            >mdi-bookshelf</v-icon
                                         >Editoras</router-link
                                     >
                                 </li>
                                 <li class="nav-item">
                                     <router-link class="nav-link" to="/livros" href="#"
-                                        ><svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-book-fill icone-menu"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"
-                                            /></svg
+                                        ><v-icon
+                                            style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                            >mdi-book-multiple</v-icon
                                         >Livros</router-link
                                     >
                                 </li>
                                 <li class="nav-item">
                                     <router-link class="nav-link" to="/alugueis" href="#"
-                                        ><svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-bookmark-plus-fill icone-menu"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"
-                                            /></svg
-                                        >Alugueis</router-link
+                                        ><v-icon
+                                            style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                            >mdi-calendar-clock</v-icon
+                                        >Aluguéis</router-link
                                     >
                                 </li>
                             </ul>
@@ -114,104 +68,43 @@
             <v-col cols="11" style="margin: auto; flex: 1;">
                 <v-row>
                     <v-col cols="3">
-                        <v-tooltip bottom color="#212529">
-                            <template v-slot:activator="{ on, attrs }">
-                                <v-card
-                                    router-link
-                                    to="/usuarios"
-                                    class="hover"
-                                    color="#212529"
-                                    dark
-                                    v-bind="attrs"
-                                    v-on="on"
-                                >
-                                    <div class="d-flex flex-row carde">
-                                        <v-icon color="#c9c9c9" style="font-size: 30px; margin-left: 20px"
-                                            >mdi-account-group</v-icon
-                                        >
-                                        <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
-                                        <span class="p">{{ totalUsuarios() }}</span>
-                                    </div>
-                                </v-card>
-                            </template>
-                            <span>Total de usuários</span>
-                        </v-tooltip>
+                        <v-card router-link to="/usuarios" class="hover" color="#212529" dark>
+                            <div class="d-flex flex-row carde " style="border-left: solid 7px #0077FF;">
+                                <span class="p" style="margin-left: 20px">Usuários</span>
+                                <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
+                                <span class="p">{{ totalUsuarios() }}</span>
+                            </div>
+                        </v-card>
                     </v-col>
 
                     <v-col cols="3">
-                        <v-tooltip bottom color="#212529">
-                            <template v-slot:activator="{ on, attrs }">
-                                <v-card
-                                    router-link
-                                    to="/editoras"
-                                    class="hover"
-                                    color="#212529"
-                                    dark
-                                    v-bind="attrs"
-                                    v-on="on"
-                                >
-                                    <div class="d-flex flex-row carde">
-                                        <v-icon color="#c9c9c9" style="font-size: 30px; margin-left: 20px"
-                                            >mdi-bookmark</v-icon
-                                        >
-                                        <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
-                                        <span class="p">{{ totalEditoras() }}</span>
-                                    </div>
-                                </v-card>
-                            </template>
-                            <span> Total de editoras</span>
-                        </v-tooltip>
+                        <v-card router-link to="/editoras" class="hover" color="#212529" dark>
+                            <div class="d-flex flex-row carde" style="border-left: solid 7px #32b4ff;">
+                                <span class="p" style="margin-left: 20px">Editoras</span>
+                                <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
+                                <span class="p">{{ totalEditoras() }}</span>
+                            </div>
+                        </v-card>
                     </v-col>
 
                     <v-col cols="3">
-                        <v-tooltip bottom color="#212529">
-                            <template v-slot:activator="{ on, attrs }">
-                                <v-card
-                                    router-link
-                                    to="/livros"
-                                    class="hover"
-                                    color="#212529"
-                                    dark
-                                    v-bind="attrs"
-                                    v-on="on"
-                                >
-                                    <div class="d-flex flex-row carde">
-                                        <v-icon color="#c9c9c9" style="font-size: 30px; margin-left: 20px"
-                                            >mdi-bookshelf</v-icon
-                                        >
-                                        <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
-                                        <span class="p">{{ totalLivros() }}</span>
-                                    </div>
-                                </v-card>
-                            </template>
-                            <span> Total de livros</span>
-                        </v-tooltip>
+                        <v-card router-link to="/livros" class="hover" color="#212529" dark>
+                            <div class="d-flex flex-row carde" style="border-left: solid 7px #DB2D2D;">
+                                <span class="p" style="margin-left: 20px">Livros</span>
+                                <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
+                                <span class="p">{{ totalLivros() }}</span>
+                            </div>
+                        </v-card>
                     </v-col>
 
                     <v-col cols="3">
-                        <v-tooltip bottom color="#212529">
-                            <template v-slot:activator="{ on, attrs }">
-                                <v-card
-                                    router-link
-                                    to="/alugueis"
-                                    class="hover"
-                                    color="#212529"
-                                    dark
-                                    v-bind="attrs"
-                                    v-on="on"
-                                >
-                                    <div class="d-flex flex-row carde">
-                                        <v-icon color="#c9c9c9" style="font-size: 30px; margin-left: 20px"
-                                            >mdi-calendar-clock</v-icon
-                                        >
-                                        <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
-                                        <span class="p">{{ totalAlugueis() }}</span>
-                                    </div>
-                                </v-card>
-                            </template>
-
-                            <span> Total de aluguéis</span>
-                        </v-tooltip>
+                        <v-card router-link to="/alugueis" class="hover" color="#212529" dark>
+                            <div class="d-flex flex-row carde" style="border-left: solid 7px #198754;">
+                                <span class="p" style="margin-left: 20px">Aluguéis</span>
+                                <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
+                                <span class="p">{{ totalAlugueis() }}</span>
+                            </div>
+                        </v-card>
                     </v-col>
                 </v-row>
                 <div class="blocos">
@@ -220,48 +113,70 @@
                             <v-icon style="color:#525050; margin-top: -3px; margin-right: 4px">mdi-account</v-icon
                             >Último usuário cadastrado
                         </h5>
-                        <div class="flex" v-for="(usuario, index) in ultimoUsuario" :key="index">
-                            <h6 class="h6" style="width: 43%;">
-                                Nome: <span class="corSpan">{{ usuario.nome }}</span>
-                            </h6>
-                            <h6 class="h6">
-                                E-mail: <span class="corSpan">{{ usuario.email }}</span>
-                            </h6>
+                        <div v-if="usuarios != 0">
+                            <div class="flex" v-for="(usuario, index) in ultimoUsuario" :key="index">
+                                <h6 class="h6" style="width: 43%;">
+                                    Nome: <span class="corSpan">{{ usuario.nome }}</span>
+                                </h6>
+                                <h6 class="h6">
+                                    E-mail: <span class="corSpan">{{ usuario.email }}</span>
+                                </h6>
+                            </div>
                         </div>
+                        <div v-if="usuarios == 0" style="padding: 0px 20px 0px 20px;">
+                            <v-alert border="right" colored-border type="error" elevation="2">
+                                Nenhum cadastro de usuário encontrado!
+                            </v-alert>
+                        </div>
+
                         <v-divider class="h6 mt-5"></v-divider>
                         <h5 class="h5">
                             <v-icon style="color:#525050; margin-top: -3px; margin-right: 4px">mdi-book</v-icon>Último
                             livro cadastrado
                         </h5>
-                        <div class="flex" v-for="(livro, index) in ultimoLivro" :key="index">
-                            <h6 class="h6" style="width: 43%;">
-                                Nome: <span class="corSpan">{{ livro.nome }}</span>
-                            </h6>
-                            <h6 class="h6">
-                                Autor: <span class="corSpan">{{ livro.autor }}</span>
-                            </h6>
+                        <div v-if="livros != 0">
+                            <div class="flex" v-for="(livro, index) in ultimoLivro" :key="index">
+                                <h6 class="h6" style="width: 43%;">
+                                    Nome: <span class="corSpan">{{ livro.nome }}</span>
+                                </h6>
+                                <h6 class="h6">
+                                    Autor: <span class="corSpan">{{ livro.autor }}</span>
+                                </h6>
+                            </div>
+                        </div>
+                        <div v-if="livros == 0" style="padding: 0px 20px 0px 20px;">
+                            <v-alert border="right" colored-border type="error" elevation="2">
+                                Nenhum cadastro de livro encontrado!
+                            </v-alert>
                         </div>
                         <v-divider class="h6 mt-5"></v-divider>
                         <h5 class="h5">
-                            <v-icon style="color:#525050; margin-top: -3px; margin-right: 4px">mdi-bookmark</v-icon
+                            <v-icon style="color:#525050; margin-top: -3px; margin-right: 4px">mdi-bookshelf</v-icon
                             >Última editora cadastrada
                         </h5>
-                        <div class="flex" v-for="(editora, index) in ultimaEditora" :key="'A' + index">
-                            <h6 class="h6" style="width: 43%;">
-                                Nome: <span class="corSpan">{{ editora.nome }}</span>
-                            </h6>
-                            <h6 class="h6">
-                                Cidade: <span class="corSpan">{{ editora.cidade }}</span>
-                            </h6>
+                        <div v-if="editoras != 0">
+                            <div class="flex mb-5" v-for="(editora, index) in ultimaEditora" :key="'A' + index">
+                                <h6 class="h6" style="width: 43%;">
+                                    Nome: <span class="corSpan">{{ editora.nome }}</span>
+                                </h6>
+                                <h6 class="h6">
+                                    Cidade: <span class="corSpan">{{ editora.cidade }}</span>
+                                </h6>
+                            </div>
+                        </div>
+                        <div v-if="editoras == 0" style="padding: 0px 20px 0px 20px;">
+                            <v-alert border="right" colored-border type="error" elevation="2">
+                                Nenhum cadastro de livro encontrado!
+                            </v-alert>
                         </div>
                     </v-card>
                     <v-card class="mt-5 elevation-5" style="width: 49%">
-                        <div>
-                            <h5 class="h5">
-                                <v-icon style="color:#525050; margin-top: -3px; margin-right: 4px"
-                                    >mdi-calendar-clock</v-icon
-                                >Últimos aluguéis cadastrados
-                            </h5>
+                        <h5 class="h5">
+                            <v-icon style="color:#525050; margin-top: -3px; margin-right: 4px"
+                                >mdi-calendar-clock</v-icon
+                            >Últimos aluguéis cadastrados
+                        </h5>
+                        <div v-if="ultimoAluguel != 0">
                             <div class="flex" v-for="(aluguel, index) in ultimoAluguel" :key="'B' + index">
                                 <h6 class="h6" style="width: 43%;">
                                     Nome do usuário: <span class="corSpan">{{ aluguel.usuario_id.nome }}</span>
@@ -300,8 +215,9 @@
                                 </div>
                             </div>
                         </div>
-                        <v-divider class="h6 mt-5"></v-divider>
-                        <div class="mt-5">
+
+                        <div class="mt-5" v-if="penultimoAluguel != 0">
+                            <v-divider class="h6 mt-5"></v-divider>
                             <div class="flex" v-for="(aluguel, index) in penultimoAluguel" :key="'B' + index">
                                 <h6 class="h6" style="width: 43%;">
                                     Nome do usuário: <span class="corSpan">{{ aluguel.usuario_id.nome }}</span>
@@ -340,8 +256,9 @@
                                 </div>
                             </div>
                         </div>
-                        <v-divider class="h6 mt-5"></v-divider>
-                        <div class="mt-5 mb-10">
+
+                        <div class="mt-5 mb-10" v-if="antepenultimoAluguel != 0">
+                            <v-divider class="h6 mt-5"></v-divider>
                             <div class="flex" v-for="(aluguel, index) in antepenultimoAluguel" :key="'B' + index">
                                 <h6 class="h6" style="width: 43%;">
                                     Nome do usuário: <span class="corSpan">{{ aluguel.usuario_id.nome }}</span>
@@ -380,21 +297,39 @@
                                 </div>
                             </div>
                         </div>
+                        <div v-if="alugueis == 0" style="padding: 20px;">
+                            <v-alert border="right" colored-border type="error" elevation="2">
+                                Nenhum cadastro de aluguel encontrado!
+                            </v-alert>
+                        </div>
                     </v-card>
                 </div>
-
-                <v-card class="elevation-5">
-                    <div class="grafico">
-                        <h5 class="h5 mt-5" style="text-align: center">Gráfico - Resumo de aluguéis</h5>
-                        <apexchart
-                            v-if="!loading"
-                            type="donut"
-                            width="500"
-                            :options="chartOptions"
-                            :series="series"
-                        ></apexchart>
-                    </div>
-                </v-card>
+                <div class="blocos mt-5">
+                    <v-card class="elevation-5" v-if="alugueis != 0" style="width: 49%">
+                        <div class="grafico">
+                            <h5 class="h5 mt-5" style="text-align: center">Gráfico - Resumo de aluguéis</h5>
+                            <apexchart
+                                v-if="!loading"
+                                type="donut"
+                                width="450"
+                                :options="chartOptions"
+                                :series="series"
+                            ></apexchart>
+                        </div>
+                    </v-card>
+                    <v-card class="elevation-5" v-if="livrosMaisAlugados != 0" style="width: 49%">
+                        <div class="grafico2">
+                            <h5 class="h5 mt-5" style="text-align: center">Gráfico - Livros mais alugados</h5>
+                            <apexchart
+                                v-if="!atualizaGrafico"
+                                type="bar"
+                                width="450"
+                                :options="chartOptions2"
+                                :series="series2"
+                            ></apexchart>
+                        </div>
+                    </v-card>
+                </div>
             </v-col>
             <Footer />
         </v-app>
@@ -446,6 +381,7 @@ export default {
         ultimoAluguel: [],
         penultimoAluguel: [],
         antepenultimoAluguel: [],
+        livrosMaisAlugados: [],
         series: [0, 0, 0],
         chartOptions: {
             labels: ['Não devolvido', 'Em atraso', 'No prazo'],
@@ -453,18 +389,39 @@ export default {
             chart: {
                 type: 'donut',
                 height: '400',
-                width: '550',
-                color: 'red'
+                width: '550'
             }
         },
-        loading: true
+        series2: [
+            {
+                data: [0, 0, 0]
+            }
+        ],
+        chartOptions2: {
+            chart: {
+                type: 'donut',
+                width: '550',
+                toolbar: {
+                    show: false
+                }
+            },
+
+            colors: ['#198754'],
+
+            labels: ['', '', '']
+        },
+
+        loading: true,
+        atualizaGrafico: true
     }),
+
+    computed: {},
 
     mounted() {
         this.getLivros();
         this.getUsuarios();
         this.getEditoras();
-        this.livrosRepetidos();
+        this.maisAlugados();
     },
 
     created() {
@@ -480,10 +437,23 @@ export default {
             });
         },
 
-        livrosRepetidos() {
-            Livro.listar().then(res => {
-                this.livros = res.data;
-                var array = this.livros;
+        maisAlugados() {
+            Livro.maisAlugados().then(resposta => {
+                this.livrosMaisAlugados = resposta.data;
+
+                if (this.livrosMaisAlugados[0] != null) {
+                    this.series2[0].data[0] = this.livrosMaisAlugados[0].totalalugado;
+                    this.chartOptions2.labels[0] = this.livrosMaisAlugados[0].nome;
+                }
+                if (this.livrosMaisAlugados[1] != null) {
+                    this.series2[0].data[1] = this.livrosMaisAlugados[1].totalalugado;
+                    this.chartOptions2.labels[1] = this.livrosMaisAlugados[1].nome;
+                }
+                if (this.livrosMaisAlugados[2] != null) {
+                    this.series2[0].data[2] = this.livrosMaisAlugados[2].totalalugado;
+                    this.chartOptions2.labels[2] = this.livrosMaisAlugados[2].nome;
+                }
+                this.atualizaGrafico = false;
             });
         },
 
@@ -509,22 +479,24 @@ export default {
                 var ultAluguel = this.alugueis[this.alugueis.length - 1];
                 var penultimo = this.alugueis[this.alugueis.length - 2];
                 var antepenultimo = this.alugueis[this.alugueis.length - 3];
-                this.ultimoAluguel = [ultAluguel];
-                this.penultimoAluguel = [penultimo];
-                this.antepenultimoAluguel = [antepenultimo];
-                this.alugueis.forEach(aluguel => {
-                    if (aluguel.data_devolucao <= aluguel.data_previsao) {
-                        this.series[2]++;
-                    }
-                });
+                if (ultAluguel != null) {
+                    this.ultimoAluguel = [ultAluguel];
+                }
+
+                if (penultimo != null) {
+                    this.penultimoAluguel = [penultimo];
+                }
+                if (antepenultimo != null) {
+                    this.antepenultimoAluguel = [antepenultimo];
+                }
+
                 this.alugueis.forEach(aluguel => {
                     if (aluguel.data_devolucao == null) {
                         this.series[0]++;
-                    }
-                });
-                this.alugueis.forEach(aluguel => {
-                    if (aluguel.data_devolucao > aluguel.data_previsao) {
+                    } else if (aluguel.data_devolucao > aluguel.data_previsao) {
                         this.series[1]++;
+                    } else {
+                        this.series[2]++;
                     }
                 });
                 this.loading = false;
@@ -565,7 +537,7 @@ export default {
 }
 
 .p {
-    font-size: 30px;
+    font-size: 25px;
     margin-right: 20px;
     color: #c9c9c9;
 }
@@ -586,6 +558,11 @@ export default {
 .grafico {
     margin: 0 auto;
     width: 370px;
+}
+
+.grafico2 {
+    margin: 0 auto;
+    width: 450px;
 }
 
 #inspire {

@@ -4,7 +4,6 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import VueSweetalert2 from 'vue-sweetalert2';
 import VueApexCharts from 'vue-apexcharts'
-import Chartkick from 'vue-chartkick'
 import  'chart.js'
 import 'hchs-vue-charts'
 
