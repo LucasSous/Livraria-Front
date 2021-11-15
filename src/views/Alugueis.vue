@@ -245,6 +245,8 @@
                                                         ></v-text-field>
                                                     </template>
                                                     <v-date-picker
+                                                        :max="nowDate"
+                                                        :min="nowDate"
                                                         v-model="date2"
                                                         @input="menu3 = false"
                                                         color="#198754"

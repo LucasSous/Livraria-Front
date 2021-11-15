@@ -317,7 +317,7 @@
                             ></apexchart>
                         </div>
                     </v-card>
-                    <v-card class="elevation-5" v-if="livrosMaisAlugados != 0" style="width: 49%">
+                    <v-card class="elevation-5" v-if="alugueis != 0" style="width: 49%">
                         <div class="grafico2">
                             <h5 class="h5 mt-5" style="text-align: center">Gráfico - Livros mais alugados</h5>
                             <apexchart
