@@ -278,13 +278,15 @@ export default {
                 v => !!v || 'Campo nome é obrigatório!',
                 v => (v && v.length <= 30) || 'O nome deve ter no máximo 30 caractéres! ',
                 v => (v && v.length >= 3) || 'O nome deve ter no mínimo 3 caractéres! ',
-                v => /^[A-Za-z ]+$/.test(v) || 'Nome inválido!'
+                v => /[a-zA-ZÀ-ú]+$/.test(v) || 'Nome inválido!',
+                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Nome inválido!'
             ],
             autorRules: [
                 v => !!v || 'Campo autor é obrigatório!',
                 v => (v && v.length <= 30) || 'O autor deve ter no máximo 30 caractéres! ',
                 v => (v && v.length >= 3) || 'O autor deve ter no mínimo 3 caractéres! ',
-                v => /^[A-Za-z ]+$/.test(v) || 'Autor inválido!'
+                v => /[a-zA-ZÀ-ú]+$/.test(v) || 'Autor inválido!',
+                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Autor inválido!'
             ],
             lancamentoRules: [
                 v => !!v || 'Campo lançamento é obrigatório! ',
@@ -308,7 +310,7 @@ export default {
                 { text: 'Editora', value: 'editora.nome' },
                 { text: 'Autor', value: 'autor' },
                 { text: 'Lançamento', value: 'lancamento' },
-                { text: 'Quantidade', value: 'quantidade' },
+                { text: 'Qtd.Disponível', value: 'quantidade' },
                 { text: 'Ações', value: 'acoes', sortable: false }
             ],
             editedIndex: -1,
@@ -322,7 +324,8 @@ export default {
                 },
                 autor: '',
                 lancamento: '',
-                quantidade: ''
+                quantidade: '',
+                totalalugado: ''
             }
         };
     },
@@ -368,7 +371,6 @@ export default {
         livrosDisponiveis() {
             Livro.disponiveis().then(resposta => {
                 this.disponiveis = resposta.data;
-                console.log(resposta.data);
             });
         },
 
@@ -474,7 +476,8 @@ export default {
                         editora: this.editedItem.editora,
                         autor: this.editedItem.autor,
                         lancamento: this.editedItem.lancamento,
-                        quantidade: this.editedItem.quantidade
+                        quantidade: this.editedItem.quantidade,
+                        totalalugado: this.editedItem.totalalugado
                     };
                     Livro.alterar(edit).then(resposta => {
                         if (resposta != null) {
