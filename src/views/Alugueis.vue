@@ -568,6 +568,7 @@ export default {
                         if (resposta != null) {
                             Toast.fire('Aluguel alterado com sucesso!', '', 'success');
                             this.listar();
+                            this.livrosDisponiveis();
                             this.close();
                         }
                     });
@@ -584,6 +585,7 @@ export default {
                             if (resposta != null) {
                                 Toast.fire('Aluguel salvo com sucesso!', '', 'success');
                                 this.listar();
+                                this.livrosDisponiveis();
                                 this.close();
                             }
                         })

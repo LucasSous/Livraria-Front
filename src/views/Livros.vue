@@ -408,7 +408,8 @@ export default {
                         editora: this.editedItem.editora,
                         autor: this.editedItem.autor,
                         lancamento: this.editedItem.lancamento,
-                        quantidade: this.editedItem.quantidade
+                        quantidade: this.editedItem.quantidade,
+                        totalalugado: this.editedItem.totalalugado
                     };
                     Livro.deletar(del)
                         .then(resposta => {
