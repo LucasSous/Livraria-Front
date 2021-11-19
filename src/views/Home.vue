@@ -406,6 +406,10 @@ export default {
                 }
             },
 
+            tooltip: {
+                enabled: false
+            },
+
             colors: ['#198754'],
 
             labels: ['', '', '']

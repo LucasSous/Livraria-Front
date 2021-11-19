@@ -160,7 +160,7 @@
                                                     v-model="editedItem.lancamento"
                                                     :rules="lancamentoRules"
                                                     :counter="4"
-                                                    label="Lancamento*"
+                                                    label="Ano de lançamento*"
                                                     append-icon="mdi-calendar"
                                                     required
                                                     color="#198754"
