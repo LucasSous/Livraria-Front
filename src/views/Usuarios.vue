@@ -195,9 +195,9 @@
                         </v-toolbar>
                     </template>
                     <template v-slot:[`item.acoes`]="{ item }">
-                        <v-tooltip top color="#198754">
+                        <v-tooltip top color="#0077FF">
                             <template v-slot:activator="{ on, attrs }">
-                                <v-icon class="mr-2" color="#198754" @click="editItem(item)" v-bind="attrs" v-on="on">
+                                <v-icon class="mr-2" color="#0077FF" @click="editItem(item)" v-bind="attrs" v-on="on">
                                     mdi-pencil
                                 </v-icon>
                             </template>

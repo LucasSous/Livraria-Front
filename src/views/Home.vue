@@ -1,7 +1,7 @@
 <template>
     <div id="home">
         <v-app id="inspire">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark elevation-4">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
                 <nav class="navbar navbar-expand-lg col-11 m-auto flex">
                     <img src="../assets/logo_wda5.png" />
                     <div class="container-fluid">
@@ -64,49 +64,68 @@
                     </div>
                 </nav>
             </nav>
+            <div class="fundo-dados elevation-4">
+                <v-col cols="11" style="margin: auto">
+                    <v-row>
+                        <v-col cols="3">
+                            <v-card router-link to="/usuarios" class="hover" color="#0077FF" dark>
+                                <div class="d-flex flex-row carde">
+                                    <span class="p-dados" style="margin-left: 20px"
+                                        ><v-icon class="icone-dados" color="#0077FF" style="font-size: 25px;"
+                                            >mdi-account-multiple</v-icon
+                                        >Usuários</span
+                                    >
+                                    <v-icon color="white" style="font-size: 20px;">mdi-arrow-right</v-icon>
+                                    <span class="p-dados">{{ totalUsuarios() }}</span>
+                                </div>
+                            </v-card>
+                        </v-col>
 
+                        <v-col cols="3">
+                            <v-card router-link to="/editoras" class="hover" color="#006caa" dark>
+                                <div class="d-flex flex-row carde">
+                                    <span class="p-dados" style="margin-left: 20px"
+                                        ><v-icon class="icone-dados" color="#006caa" style="font-size: 25px;"
+                                            >mdi-bookshelf</v-icon
+                                        >Editoras</span
+                                    >
+                                    <v-icon color="white" style="font-size: 20px;">mdi-arrow-right</v-icon>
+                                    <span class="p-dados">{{ totalEditoras() }}</span>
+                                </div>
+                            </v-card>
+                        </v-col>
+
+                        <v-col cols="3">
+                            <v-card router-link to="/livros" class="hover" color="#DB2D2D" dark>
+                                <div class="d-flex flex-row carde">
+                                    <span class="p-dados" style="margin-left: 20px"
+                                        ><v-icon class="icone-dados" color="#DB2D2D" style="font-size: 25px;"
+                                            >mdi-book-multiple</v-icon
+                                        >Livros</span
+                                    >
+                                    <v-icon color="white" style="font-size: 20px;">mdi-arrow-right</v-icon>
+                                    <span class="p-dados">{{ totalLivros() }}</span>
+                                </div>
+                            </v-card>
+                        </v-col>
+
+                        <v-col cols="3">
+                            <v-card router-link to="/alugueis" class="hover" color="#198754" dark>
+                                <div class="d-flex flex-row carde">
+                                    <span class="p-dados" style="margin-left: 20px"
+                                        ><v-icon class="icone-dados" color="#198754" style="font-size: 25px;"
+                                            >mdi-calendar-clock</v-icon
+                                        >Aluguéis</span
+                                    >
+                                    <v-icon color="white" style="font-size: 20px;">mdi-arrow-right</v-icon>
+                                    <span class="p-dados">{{ totalAlugueis() }}</span>
+                                </div>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-col>
+            </div>
             <v-col cols="11" style="margin: auto; flex: 1;">
-                <v-row>
-                    <v-col cols="3">
-                        <v-card router-link to="/usuarios" class="hover" color="#212529" dark>
-                            <div class="d-flex flex-row carde " style="border-left: solid 7px #0077FF;">
-                                <span class="p" style="margin-left: 20px">Usuários</span>
-                                <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
-                                <span class="p">{{ totalUsuarios() }}</span>
-                            </div>
-                        </v-card>
-                    </v-col>
-
-                    <v-col cols="3">
-                        <v-card router-link to="/editoras" class="hover" color="#212529" dark>
-                            <div class="d-flex flex-row carde" style="border-left: solid 7px #32b4ff;">
-                                <span class="p" style="margin-left: 20px">Editoras</span>
-                                <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
-                                <span class="p">{{ totalEditoras() }}</span>
-                            </div>
-                        </v-card>
-                    </v-col>
-
-                    <v-col cols="3">
-                        <v-card router-link to="/livros" class="hover" color="#212529" dark>
-                            <div class="d-flex flex-row carde" style="border-left: solid 7px #DB2D2D;">
-                                <span class="p" style="margin-left: 20px">Livros</span>
-                                <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
-                                <span class="p">{{ totalLivros() }}</span>
-                            </div>
-                        </v-card>
-                    </v-col>
-
-                    <v-col cols="3">
-                        <v-card router-link to="/alugueis" class="hover" color="#212529" dark>
-                            <div class="d-flex flex-row carde" style="border-left: solid 7px #198754;">
-                                <span class="p" style="margin-left: 20px">Aluguéis</span>
-                                <v-icon color="#c9c9c9" style="font-size: 20px;">mdi-arrow-right</v-icon>
-                                <span class="p">{{ totalAlugueis() }}</span>
-                            </div>
-                        </v-card>
-                    </v-col>
-                </v-row>
                 <div class="blocos">
                     <v-card class="mt-5 elevation-5" style="width: 49%">
                         <h5 class="h5">
@@ -457,6 +476,7 @@ export default {
                     this.series2[0].data[2] = this.livrosMaisAlugados[2].totalalugado;
                     this.chartOptions2.labels[2] = this.livrosMaisAlugados[2].nome;
                 }
+
                 this.atualizaGrafico = false;
             });
         },
@@ -538,12 +558,19 @@ export default {
 .blocos {
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .p {
     font-size: 25px;
     margin-right: 20px;
     color: #c9c9c9;
+}
+
+.p-dados {
+    font-size: 25px;
+    margin-right: 20px;
+    color: #ffffff;
 }
 
 .h6 {
@@ -579,5 +606,18 @@ export default {
 
 .vIcon {
     color: #525050;
+}
+
+.fundo-dados {
+    background: #212529;
+    height: 45px;
+}
+
+.icone-dados {
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 4px;
+    margin-top: -6px;
+    margin-right: 5px;
 }
 </style>
