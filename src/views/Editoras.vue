@@ -214,6 +214,7 @@ export default {
 
     data() {
         return {
+            error: '',
             editora: {
                 id: '',
                 nome: '',
@@ -376,27 +377,47 @@ export default {
                         nome: this.editedItem.nome,
                         cidade: this.editedItem.cidade
                     };
-                    Editora.alterar(edit).then(resposta => {
-                        if (resposta != null) {
-                            Toast.fire('Editora alterada com sucesso!', '', 'success');
-                            this.listar();
-                            this.close();
-                        }
-                    });
-                    this.reset();
+                    Editora.alterar(edit)
+                        .then(resposta => {
+                            if (resposta != null) {
+                                Toast.fire('Editora alterada com sucesso!', '', 'success');
+                                this.listar();
+                                this.close();
+                            }
+                        })
+                        .catch(resposta => {
+                            var erro = resposta.response.data.error;
+                            this.error = resposta.response.data.error;
+                            this.$swal({
+                                icon: 'error',
+                                text: erro,
+                                confirmButtonColor: '#198754',
+                                confirmButtonText: 'Ok'
+                            });
+                        });
                 } else {
                     var save = {
                         nome: this.editedItem.nome,
                         cidade: this.editedItem.cidade
                     };
-                    Editora.salvar(save).then(resposta => {
-                        if (resposta != null) {
-                            Toast.fire('Editora salva com sucesso!', '', 'success');
-                            this.listar();
-                            this.close();
-                        }
-                    });
-                    this.reset();
+                    Editora.salvar(save)
+                        .then(resposta => {
+                            if (resposta != null) {
+                                Toast.fire('Editora salva com sucesso!', '', 'success');
+                                this.listar();
+                                this.close();
+                            }
+                        })
+                        .catch(resposta => {
+                            var erro = resposta.response.data.error;
+                            this.error = resposta.response.data.error;
+                            this.$swal({
+                                icon: 'error',
+                                text: erro,
+                                confirmButtonColor: '#198754',
+                                confirmButtonText: 'Ok'
+                            });
+                        });
                 }
             }
         },

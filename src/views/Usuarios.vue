@@ -418,12 +418,23 @@ export default {
                         cidade: this.editedItem.cidade,
                         email: this.editedItem.email
                     };
-                    Usuario.alterar(edit).then(resposta => {
-                        if (resposta != null) {
-                            Toast.fire('Usuário alterado com sucesso!', '', 'success');
-                            this.listar();
-                        }
-                    });
+                    Usuario.alterar(edit)
+                        .then(resposta => {
+                            if (resposta != null) {
+                                Toast.fire('Usuário alterado com sucesso!', '', 'success');
+                                this.listar();
+                            }
+                        })
+                        .catch(resposta => {
+                            var erro = resposta.response.data.error;
+                            this.error = resposta.response.data.error;
+                            this.$swal({
+                                icon: 'error',
+                                text: erro,
+                                confirmButtonColor: '#198754',
+                                confirmButtonText: 'Ok'
+                            });
+                        });
                 } else {
                     var save = {
                         nome: this.editedItem.nome,
@@ -431,14 +442,25 @@ export default {
                         cidade: this.editedItem.cidade,
                         email: this.editedItem.email
                     };
-                    Usuario.salvar(save).then(resposta => {
-                        if (resposta != null) {
-                            Toast.fire('Usuário salvo com sucesso!', '', 'success');
-                            this.listar();
-                        }
-                    });
+                    Usuario.salvar(save)
+                        .then(resposta => {
+                            if (resposta != null) {
+                                Toast.fire('Usuário salvo com sucesso!', '', 'success');
+                                this.listar();
+                                this.close();
+                            }
+                        })
+                        .catch(resposta => {
+                            var erro = resposta.response.data.error;
+                            this.error = resposta.response.data.error;
+                            this.$swal({
+                                icon: 'error',
+                                text: erro,
+                                confirmButtonColor: '#198754',
+                                confirmButtonText: 'Ok'
+                            });
+                        });
                 }
-                this.close();
             }
         },
         reseteForm() {

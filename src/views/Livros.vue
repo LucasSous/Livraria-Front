@@ -482,13 +482,24 @@ export default {
                         quantidade: this.editedItem.quantidade,
                         totalalugado: this.editedItem.totalalugado
                     };
-                    Livro.alterar(edit).then(resposta => {
-                        if (resposta != null) {
-                            Toast.fire('Livro alterado com sucesso!', '', 'success');
-                            this.listar();
-                            this.close();
-                        }
-                    });
+                    Livro.alterar(edit)
+                        .then(resposta => {
+                            if (resposta != null) {
+                                Toast.fire('Livro alterado com sucesso!', '', 'success');
+                                this.listar();
+                                this.close();
+                            }
+                        })
+                        .catch(resposta => {
+                            var erro = resposta.response.data.error;
+                            this.error = resposta.response.data.error;
+                            this.$swal({
+                                icon: 'error',
+                                text: erro,
+                                confirmButtonColor: '#198754',
+                                confirmButtonText: 'Ok'
+                            });
+                        });
                 } else {
                     var save = {
                         nome: this.editedItem.nome,
@@ -497,13 +508,25 @@ export default {
                         lancamento: this.editedItem.lancamento,
                         quantidade: this.editedItem.quantidade
                     };
-                    Livro.salvar(save).then(resposta => {
-                        if (resposta != null) {
-                            Toast.fire('Livro salvo com sucesso!', '', 'success');
-                            this.listar();
-                            this.close();
-                        }
-                    });
+                    Livro.salvar(save)
+                        .then(resposta => {
+                            if (resposta != null) {
+                                Toast.fire('Livro salvo com sucesso!', '', 'success');
+                                this.listar();
+                                this.close();
+                            }
+                        })
+                        .catch(resposta => {
+                            if (resposta) {
+                                var erro = resposta.response.data.error;
+                                this.$swal({
+                                    icon: 'error',
+                                    text: erro,
+                                    confirmButtonColor: '#198754',
+                                    confirmButtonText: 'Ok'
+                                });
+                            }
+                        });
                 }
             }
         },
