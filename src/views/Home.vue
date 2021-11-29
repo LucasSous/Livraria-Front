@@ -2,72 +2,74 @@
     <div id="home">
         <v-app id="inspire">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-                <nav class="navbar navbar-expand-lg col-11 m-auto flex">
-                    <img src="../assets/logo_wda5.png" />
-                    <div class="container-fluid">
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <router-link class="nav-link active" to="/" aria-current="page" href="#">
-                                        <v-icon
-                                            style="color:white; margin-top: -3px; margin-right: 4px; font-size: 20px"
-                                            >mdi-home</v-icon
-                                        >Início</router-link
-                                    >
-                                </li>
-                                <li class="nav-item">
-                                    <router-link class="nav-link" to="/usuarios" href="#"
-                                        ><v-icon
-                                            style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
-                                            >mdi-account-multiple</v-icon
-                                        >Usuários</router-link
-                                    >
-                                </li>
+                <v-col cols="11" style="margin: auto; padding: 7px 0px">
+                    <nav class="navbar navbar-expand-lg">
+                        <img src="../assets/logo_wda5.png" />
+                        <div class="container-fluid">
+                            <button
+                                class="navbar-toggler"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation"
+                            >
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <router-link class="nav-link active" to="/" aria-current="page" href="#">
+                                            <v-icon
+                                                style="color:white; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                                >mdi-home</v-icon
+                                            >Início</router-link
+                                        >
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link" to="/usuarios" href="#"
+                                            ><v-icon
+                                                style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                                >mdi-account-multiple</v-icon
+                                            >Usuários</router-link
+                                        >
+                                    </li>
 
-                                <li class="nav-item">
-                                    <router-link class="nav-link " to="/editoras"
-                                        ><v-icon
-                                            style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
-                                            >mdi-bookshelf</v-icon
-                                        >Editoras</router-link
-                                    >
-                                </li>
-                                <li class="nav-item">
-                                    <router-link class="nav-link" to="/livros" href="#"
-                                        ><v-icon
-                                            style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
-                                            >mdi-book-multiple</v-icon
-                                        >Livros</router-link
-                                    >
-                                </li>
-                                <li class="nav-item">
-                                    <router-link class="nav-link" to="/alugueis" href="#"
-                                        ><v-icon
-                                            style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
-                                            >mdi-calendar-clock</v-icon
-                                        >Aluguéis</router-link
-                                    >
-                                </li>
-                            </ul>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link " to="/editoras"
+                                            ><v-icon
+                                                style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                                >mdi-bookshelf</v-icon
+                                            >Editoras</router-link
+                                        >
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link" to="/livros" href="#"
+                                            ><v-icon
+                                                style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                                >mdi-book-multiple</v-icon
+                                            >Livros</router-link
+                                        >
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link" to="/alugueis" href="#"
+                                            ><v-icon
+                                                style="color:#838383; margin-top: -3px; margin-right: 4px; font-size: 20px"
+                                                >mdi-calendar-clock</v-icon
+                                            >Aluguéis</router-link
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
+                </v-col>
             </nav>
             <div class="fundo-dados elevation-4">
                 <v-col cols="11" style="margin: auto">
                     <v-row>
-                        <v-col cols="3">
+                        <v-col cols="3" style="padding: 0px 12px">
                             <v-card router-link to="/usuarios" class="hover" color="#0077FF" dark>
                                 <div class="d-flex flex-row carde">
                                     <span class="p-dados" style="margin-left: 20px"
@@ -81,7 +83,7 @@
                             </v-card>
                         </v-col>
 
-                        <v-col cols="3">
+                        <v-col cols="3" style="padding: 0px 12px">
                             <v-card router-link to="/editoras" class="hover" color="#006caa" dark>
                                 <div class="d-flex flex-row carde">
                                     <span class="p-dados" style="margin-left: 20px"
@@ -95,7 +97,7 @@
                             </v-card>
                         </v-col>
 
-                        <v-col cols="3">
+                        <v-col cols="3" style="padding: 0px 12px">
                             <v-card router-link to="/livros" class="hover" color="#DB2D2D" dark>
                                 <div class="d-flex flex-row carde">
                                     <span class="p-dados" style="margin-left: 20px"
@@ -109,7 +111,7 @@
                             </v-card>
                         </v-col>
 
-                        <v-col cols="3">
+                        <v-col cols="3" style="padding: 0px 12px">
                             <v-card router-link to="/alugueis" class="hover" color="#198754" dark>
                                 <div class="d-flex flex-row carde">
                                     <span class="p-dados" style="margin-left: 20px"
@@ -610,7 +612,7 @@ export default {
 
 .fundo-dados {
     background: #212529;
-    height: 45px;
+    height: 31px;
 }
 
 .icone-dados {
