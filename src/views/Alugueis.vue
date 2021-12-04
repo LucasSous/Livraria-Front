@@ -94,7 +94,6 @@
                                     <v-btn
                                         color="#198754"
                                         dark
-                                        @click="reseteForm()"
                                         class="mb-2"
                                         style="margin-top: 9px;"
                                         v-bind="attrs"
@@ -493,9 +492,6 @@ export default {
         },
 
         deleteItem(item) {
-            this.editedIndex = this.alugueis.indexOf(item);
-            this.editedItem = Object.assign({}, item);
-
             this.$swal({
                 title: 'Tem certeza?',
                 text: 'Este aluguel será deletado permanentemente!',
@@ -507,6 +503,9 @@ export default {
                 cancelButtonText: 'Cancelar'
             }).then(result => {
                 if (result.isConfirmed) {
+                    this.editedIndex = this.alugueis.indexOf(item);
+                    this.editedItem = Object.assign({}, item);
+
                     var del = {
                         id: this.editedItem.id,
                         usuario_id: this.editedItem.usuario_id,
@@ -528,6 +527,8 @@ export default {
                             this.listar();
                         }
                     });
+                    this.reset();
+                    this.close();
                 }
             });
             this.editedIndex = -1;

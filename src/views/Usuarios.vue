@@ -95,7 +95,6 @@
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-btn
                                         color="#198754"
-                                        @click="reseteForm()"
                                         dark
                                         class="mb-2"
                                         style="margin-top: 9px;"
@@ -336,9 +335,6 @@ export default {
         },
 
         deleteItem(item) {
-            this.editedIndex = this.usuarios.indexOf(item);
-            this.editedItem = Object.assign({}, item);
-
             this.$swal({
                 title: 'Tem certeza?',
                 text: 'Este usuário será deletado permanentemente!',
@@ -350,6 +346,9 @@ export default {
                 cancelButtonText: 'Cancelar!'
             }).then(result => {
                 if (result.isConfirmed) {
+                    this.editedIndex = this.usuarios.indexOf(item);
+                    this.editedItem = Object.assign({}, item);
+
                     var del = {
                         id: this.editedItem.id,
                         nome: this.editedItem.nome,
@@ -380,6 +379,7 @@ export default {
                                 confirmButtonText: 'Ok'
                             });
                         });
+                    this.reset();
                 }
             });
             this.editedIndex = -1;

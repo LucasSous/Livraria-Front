@@ -94,7 +94,6 @@
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-btn
                                         color="#198754"
-                                        @click="reseteForm()"
                                         dark
                                         class="mb-2"
                                         style="margin-top: 9px;"
@@ -300,9 +299,6 @@ export default {
         },
 
         deleteItem(item) {
-            this.editedIndex = this.editoras.indexOf(item);
-            this.editedItem = Object.assign({}, item);
-
             this.$swal({
                 title: 'Tem certeza?',
                 text: 'Esta editora será deletada permanentemente!',
@@ -314,6 +310,9 @@ export default {
                 cancelButtonText: 'Cancelar'
             }).then(result => {
                 if (result.isConfirmed) {
+                    this.editedIndex = this.editoras.indexOf(item);
+                    this.editedItem = Object.assign({}, item);
+
                     var del = {
                         id: this.editedItem.id,
                         nome: this.editedItem.nome,
@@ -344,6 +343,7 @@ export default {
                                 });
                             }
                         });
+                    this.reset();
                 }
                 this.editedIndex = -1;
             });
