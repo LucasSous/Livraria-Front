@@ -281,14 +281,16 @@ export default {
                 v => (v && v.length <= 30) || 'O nome deve ter no máximo 30 caractéres! ',
                 v => (v && v.length >= 3) || 'O nome deve ter no mínimo 3 caractéres! ',
                 v => /[a-zA-ZÀ-ú]+$/.test(v) || 'Nome inválido!',
-                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Nome inválido!'
+                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Nome inválido!',
+                v => /^[^-\s]/.test(v) || 'Informe um nome sem espaçamentos no início!'
             ],
             autorRules: [
                 v => !!v || 'Campo autor é obrigatório!',
                 v => (v && v.length <= 30) || 'O autor deve ter no máximo 30 caractéres! ',
                 v => (v && v.length >= 3) || 'O autor deve ter no mínimo 3 caractéres! ',
                 v => /[a-zA-ZÀ-ú]+$/.test(v) || 'Autor inválido!',
-                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Autor inválido!'
+                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Autor inválido!',
+                v => /^[^-\s]/.test(v) || 'Informe um autor sem espaçamentos no início!'
             ],
             lancamentoRules: [
                 v => !!v || 'Campo lançamento é obrigatório! ',
@@ -355,6 +357,7 @@ export default {
         this.getEditoras();
         this.validacaoAno();
         this.livrosDisponiveis();
+        this.teste();
     },
 
     methods: {
@@ -544,6 +547,20 @@ export default {
                 quantidade: ''
             };
             this.reset();
+        },
+
+        teste() {
+            Livro.listar().then(resposta => {
+                this.livros = resposta.data;
+                let livros = this.livros;
+
+                // Aqui realiza a soma dos valores das quantidades dos livros acessando a propriedade dentro do objeto
+                let totalalugados = livros.reduce((totalalugados, valor) => totalalugados + valor.totalalugado, 0);
+                let quantidade = livros.reduce((quantidade, valor) => quantidade + valor.quantidade, 0);
+                let total = totalalugados + quantidade;
+
+                //console.log(total);
+            });
         }
     }
 };

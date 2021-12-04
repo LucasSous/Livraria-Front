@@ -229,14 +229,16 @@ export default {
                 v => (v && v.length <= 30) || 'O nome deve ter no máximo 30 caractéres! ',
                 v => (v && v.length >= 3) || 'O nome deve ter no mínimo 3 caractéres! ',
                 v => /[a-zA-ZÀ-ú]+$/.test(v) || 'Nome inválido!',
-                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Nome inválido!'
+                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Nome inválido!',
+                v => /^[^-\s]/.test(v) || 'Informe um nome sem espaçamentos no início!'
             ],
             cidadeRules: [
                 v => !!v || 'Campo cidade é obrigatório!',
                 v => (v && v.length <= 20) || 'A cidade deve ter no máximo 20 caractéres! ',
                 v => (v && v.length >= 3) || 'A cidade deve ter no mínimo 3 caractéres! ',
                 v => /[a-zA-ZÀ-ú]+$/.test(v) || 'Cidade inválida!',
-                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Cidade inválida!'
+                v => /^[a-zA-ZÀ-ú ]+$/.test(v) || 'Cidade inválida!',
+                v => /^[^-\s]/.test(v) || 'Informe uma cidade sem espaçamentos no início!'
             ],
 
             dialog: false,
