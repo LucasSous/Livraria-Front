@@ -275,7 +275,7 @@
                     </template>
                     <template v-slot:[`item.status`]="{ item }">
                         <v-chip outlined v-if="item.data_devolucao == null" color="primary">
-                            Não devolvido
+                            {{ (item.status = 'Não devolvido') }}
                         </v-chip>
                         <v-chip
                             outlined
@@ -283,23 +283,23 @@
                             color="red"
                             dark
                         >
-                            Com atraso
+                            {{ (item.status = 'Com atraso') }}
                         </v-chip>
                         <v-chip outlined v-else color="#198754" dark>
-                            No prazo
+                            {{ (item.status = 'No prazo') }}
                         </v-chip>
                     </template>
 
                     <template v-slot:[`item.acoes`]="{ item }">
-                        <v-tooltip v-if="item.data_devolucao != null" top color="red">
+                        <v-tooltip v-if="item.data_devolucao == null" top color="red">
                             <template v-slot:activator="{ on, attrs }">
                                 <v-icon class="mr-2" color="red" @click="deleteItem(item)" v-bind="attrs" v-on="on">
-                                    mdi-delete
+                                    mdi-close-circle-outline
                                 </v-icon>
                             </template>
-                            <span>Deletar</span>
+                            <span>Cancelar Aluguel</span>
                         </v-tooltip>
-                        <v-tooltip v-else top color="primary">
+                        <v-tooltip v-if="item.data_devolucao == null" top color="primary">
                             <template v-slot:activator="{ on, attrs }">
                                 <v-icon class="mr-2" color="primary" @click="editItem(item)" v-bind="attrs" v-on="on">
                                     mdi-book-check
@@ -381,8 +381,8 @@ export default {
                 { text: 'Livro', value: 'livro_id.nome' },
                 { text: 'Data de aluguel', value: 'data_aluguel' },
                 { text: 'Data de previsão', value: 'data_previsao' },
-                { text: 'Data de devoluçao', value: 'data_devolucao' },
-                { text: 'Status', value: 'status', sortable: false },
+                { text: 'Data de devolução', value: 'data_devolucao' },
+                { text: 'Status', value: 'status' },
                 { text: 'Ações', value: 'acoes', sortable: false }
             ],
             editedIndex: -1,
@@ -494,12 +494,12 @@ export default {
         deleteItem(item) {
             this.$swal({
                 title: 'Tem certeza?',
-                text: 'Este aluguel será deletado permanentemente!',
+                text: 'Este aluguel será cancelado e excluido do sistema!',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#198754',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Sim, deletar!',
+                confirmButtonText: 'OK',
                 cancelButtonText: 'Cancelar'
             }).then(result => {
                 if (result.isConfirmed) {
@@ -516,8 +516,7 @@ export default {
                     };
                     Aluguel.deletar(del).then(resposta => {
                         this.$swal({
-                            title: 'Deletedo!',
-                            text: 'Aluguel deletado com sucesso.',
+                            text: 'Aluguel cancelado com sucesso.',
                             icon: 'success',
                             confirmButtonColor: '#198754',
                             confirmButtonText: 'Ok'
