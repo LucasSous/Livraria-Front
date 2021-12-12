@@ -177,6 +177,19 @@
                                                     min="1"
                                                     required
                                                     color="#198754"
+                                                    v-if="editedIndex == -1"
+                                                ></v-text-field>
+
+                                                <v-text-field
+                                                    v-model="editedItem.quantidade"
+                                                    :rules="quantidadeeditRules"
+                                                    append-icon="mdi-numeric"
+                                                    label="Quantidade*"
+                                                    type="number"
+                                                    onkeypress="return event,charCode > 48"
+                                                    min="0"
+                                                    color="#198754"
+                                                    v-if="editedIndex != -1"
                                                 ></v-text-field>
                                             </v-form>
                                         </v-container>
@@ -302,6 +315,7 @@ export default {
                 v => (v && v >= 1) || 'A quantidade não pode ser menor que 1! ',
                 v => (v && !isNaN(v)) || 'Informe um valor válido'
             ],
+
             editoraRules: [v => (v && v.nome != null) || 'Escolha uma editora'],
 
             dialog: false,
