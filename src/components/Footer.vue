@@ -1,6 +1,6 @@
 <template>
     <footer class="rodape ">
-        <p><b>Livraria WDA ©</b> - Desenvolvido por Lucas Sousa.</p>
+        <p><b>Livraria WDA ©</b> -<a href="https://github.com/LucasSous"> Desenvolvido por Lucas Sousa.</a></p>
     </footer>
 </template>
 
@@ -21,6 +21,11 @@ export default {
     top: 8px;
     text-align: center;
     padding: 10px;
+    color: rgb(90, 90, 90);
+}
+
+.rodape p a {
+    text-decoration: none;
     color: rgb(90, 90, 90);
 }
 </style>
