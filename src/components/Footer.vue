@@ -1,6 +1,10 @@
 <template>
     <footer class="rodape ">
-        <p><b>Livraria WDA ©</b> -<a href="https://github.com/LucasSous"> Desenvolvido por Lucas Sousa.</a></p>
+        <p>
+            <b>Livraria WDA ©</b> -<a href="https://github.com/LucasSous" target="_blank">
+                Desenvolvido por Lucas Sousa.</a
+            >
+        </p>
     </footer>
 </template>
 
