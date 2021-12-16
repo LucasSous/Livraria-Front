@@ -179,8 +179,8 @@
                                                     </template>
 
                                                     <v-date-picker
-                                                        :max="nowDate"
-                                                        :min="nowDate"
+                                                        :max="dataAtual"
+                                                        :min="dataAtual"
                                                         v-model="date"
                                                         @input="menu1 = false"
                                                         color="#198754"
@@ -215,7 +215,7 @@
 
                                                     <v-date-picker
                                                         v-model="date1"
-                                                        :min="nowDate"
+                                                        :min="dataAtual"
                                                         @input="menu2 = false"
                                                         color="#198754"
                                                     ></v-date-picker>
@@ -246,8 +246,8 @@
                                                         ></v-text-field>
                                                     </template>
                                                     <v-date-picker
-                                                        :max="nowDate"
-                                                        :min="nowDate"
+                                                        :max="dataAtual"
+                                                        :min="dataAtual"
                                                         v-model="date2"
                                                         @input="menu3 = false"
                                                         color="#198754"
@@ -417,7 +417,8 @@ export default {
             menu2: false,
             menu3: false,
 
-            nowDate: new Date().toISOString().slice(0, 10)
+            nowDate: new Date().toISOString().slice(0, 10),
+            dataAtual: ''
         };
     },
 
@@ -457,6 +458,7 @@ export default {
         this.getUsuarios();
         this.getLivros();
         this.livrosDisponiveis();
+        this.pegarDataAtual();
     },
 
     methods: {
@@ -464,6 +466,16 @@ export default {
             Aluguel.listar().then(resposta => {
                 this.alugueis = resposta.data;
             });
+        },
+
+        pegarDataAtual() {
+            var data = new Date();
+            var dia = String(data.getDate()).padStart(2, '0');
+            var mes = String(data.getMonth() + 1).padStart(2, '0');
+            var ano = data.getFullYear();
+            var dataAtual = ano + '-' + mes + '-' + dia;
+            this.dataAtual = dataAtual;
+            console.log(dataAtual);
         },
 
         livrosDisponiveis() {
