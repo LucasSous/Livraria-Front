@@ -290,6 +290,22 @@
                         </v-chip>
                     </template>
 
+                    <template v-slot:[`item.data_devolucao`]="{ item }">
+                        <div v-if="item.data_devolucao == null">
+                            <v-tooltip v-if="item.data_previsao <= dataAtual" top>
+                                <template v-slot:activator="{ on, attrs }">
+                                    <v-icon class="mr-2" color="#D7CF36" v-bind="attrs" v-on="on">
+                                        mdi-alert
+                                    </v-icon>
+                                </template>
+                                <span>Devolução Pendente</span>
+                            </v-tooltip>
+                        </div>
+                        <div v-else>
+                            {{ item.data_devolucao }}
+                        </div>
+                    </template>
+
                     <template v-slot:[`item.acoes`]="{ item }">
                         <v-tooltip v-if="item.data_devolucao == null" top color="red">
                             <template v-slot:activator="{ on, attrs }">
