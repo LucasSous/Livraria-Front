@@ -70,6 +70,7 @@
             <v-col cols="11" style="margin: auto; flex: 1;">
                 <v-data-table
                     style="flex-grow: 1;"
+                    :loading="isLoading"
                     :headers="headers"
                     :items="usuarios"
                     :items-per-page="5"
@@ -233,6 +234,7 @@ export default {
 
     data() {
         return {
+            isLoading: true,
             usuario: {
                 id: '',
                 nome: '',
