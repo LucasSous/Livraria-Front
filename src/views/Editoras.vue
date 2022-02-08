@@ -69,6 +69,7 @@
 
             <v-col cols="11" style="margin: auto; flex: 1;">
                 <v-data-table
+                    :loading="isLoading"
                     :headers="headers"
                     :items="editoras"
                     :items-per-page="5"
@@ -213,6 +214,7 @@ export default {
 
     data() {
         return {
+            isLoading: true,
             error: '',
             editora: {
                 id: '',
@@ -283,6 +285,7 @@ export default {
     methods: {
         listar() {
             Editora.listar().then(resposta => {
+                this.isLoading = false;
                 this.editoras = resposta.data;
             });
         },

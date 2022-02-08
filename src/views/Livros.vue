@@ -68,6 +68,7 @@
             </nav>
             <v-col cols="11" style="margin: auto; flex: 1">
                 <v-data-table
+                    :loading="isLoading"
                     :headers="headers"
                     :items="livros"
                     :items-per-page="5"
@@ -269,6 +270,7 @@ export default {
 
     data() {
         return {
+            isLoading: true,
             livro: {
                 id: '',
                 nome: '',
@@ -382,6 +384,7 @@ export default {
         },
         listar() {
             Livro.listar().then(resposta => {
+                this.isLoading = false;
                 this.livros = resposta.data;
             });
         },

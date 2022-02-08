@@ -68,6 +68,7 @@
             </nav>
             <v-col cols="11" style="margin: auto; flex: 1; ">
                 <v-data-table
+                    :loading="isLoading"
                     :headers="headers"
                     :items="alugueis"
                     :items-per-page="5"
@@ -346,6 +347,7 @@ export default {
 
     data() {
         return {
+            isLoading: true,
             aluguel: {
                 id: '',
                 livro_id: {
@@ -398,8 +400,8 @@ export default {
                 { text: 'Data de aluguel', value: 'data_aluguel' },
                 { text: 'Data de previsão', value: 'data_previsao' },
                 { text: 'Data de devolução', value: 'data_devolucao' },
-                { text: 'Status', value: 'status' },
-                { text: 'Ações', value: 'acoes', sortable: false }
+                { text: 'Status', value: 'status', align: 'center' },
+                { text: 'Ações', value: 'acoes', sortable: false, align: 'center' }
             ],
             editedIndex: -1,
             editedItem: {
@@ -480,6 +482,7 @@ export default {
     methods: {
         listar() {
             Aluguel.listar().then(resposta => {
+                this.isLoading = false;
                 this.alugueis = resposta.data;
             });
         },

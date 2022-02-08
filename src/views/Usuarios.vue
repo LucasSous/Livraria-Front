@@ -69,6 +69,7 @@
 
             <v-col cols="11" style="margin: auto; flex: 1;">
                 <v-data-table
+                    :loading="isLoading"
                     style="flex-grow: 1;"
                     :headers="headers"
                     :items="usuarios"
@@ -233,6 +234,7 @@ export default {
 
     data() {
         return {
+            isLoading: true,
             usuario: {
                 id: '',
                 nome: '',
@@ -319,6 +321,7 @@ export default {
     methods: {
         listar() {
             Usuario.listar().then(resposta => {
+                this.isLoading = false;
                 this.usuarios = resposta.data;
             });
         },
